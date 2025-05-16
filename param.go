@@ -37,7 +37,7 @@ type SendParam struct {
 	// 使用文件播需要先调用文件上传接口获取file_id,参照"2.4文件上传接口"
 	FileId string `json:"file_id,omitempty"`
 
-	Filter  string      `json:"filter,omitempty"` // 当type=groupcast时,必填,用户筛选条件,如用户标签、渠道等,参考附录G
+	Filter  interface{} `json:"filter,omitempty"` // 当type=groupcast时,必填,用户筛选条件,如用户标签、渠道等,参考附录G
 	Payload interface{} `json:"payload"`          // 必填,JSON格式,具体消息内容(iOS最大为2012B,Android最大为1840B)
 	Policy  struct {
 		// 可选,定时发送时间,若不填写表示立即发送
